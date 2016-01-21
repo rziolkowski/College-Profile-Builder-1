@@ -29,6 +29,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Bfy-Q8-UxA" kind="show" id="o2R-Ra-nBf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -66,10 +69,10 @@
             </objects>
             <point key="canvasLocation" x="976" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="ocT-OQ-zPg">
             <objects>
-                <viewController id="Bfy-Q8-UxA" sceneMemberID="viewController">
+                <viewController id="Bfy-Q8-UxA" customClass="DetailViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vOB-7k-N51"/>
                         <viewControllerLayoutGuide type="bottom" id="nDS-NJ-QuM"/>
@@ -78,31 +81,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-fd-4jf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVF-fd-4jf">
                                 <rect key="frame" x="252" y="88" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCF-Dw-18I">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCF-Dw-18I">
                                 <rect key="frame" x="252" y="126" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Population" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-eD-kNT">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Population" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-eD-kNT">
                                 <rect key="frame" x="252" y="164" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QW7-q8-NSm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QW7-q8-NSm">
                                 <rect key="frame" x="180" y="209" width="240" height="128"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLP-ms-GN7">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLP-ms-GN7">
                                 <rect key="frame" x="277" y="345" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QW7-q8-NSm" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="2ru-0d-UGv"/>
+                            <constraint firstItem="BB3-eD-kNT" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="8zK-HB-dkb"/>
+                            <constraint firstItem="RCF-Dw-18I" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="bpj-Nk-rbV"/>
+                            <constraint firstItem="dVF-fd-4jf" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="laO-E2-84z"/>
+                            <constraint firstItem="OLP-ms-GN7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="y5J-tM-bwc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="QW7-q8-NSm" id="RNa-ee-UOE"/>
+                        <outlet property="locationTextField" destination="RCF-Dw-18I" id="7Tu-65-8V2"/>
+                        <outlet property="nameTextField" destination="dVF-fd-4jf" id="Fgp-hU-Vzd"/>
+                        <outlet property="populationTextField" destination="BB3-eD-kNT" id="Pjg-ki-WPp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFU-51-35i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
