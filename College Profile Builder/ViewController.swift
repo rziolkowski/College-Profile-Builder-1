@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colleges.append(College(name: "University of Illinois", location: "Urbana/Champaigne", numberOfStudents: 40000, image: UIImage(named: "Default")!))
+        colleges.append(College(name: "University of Illinois", location: "Urbana/Champaign", numberOfStudents: 40000, image: UIImage(named: "Default")!))
         colleges.append(College(name: "Valparaiso", location: "Valparaiso", numberOfStudents: 40000, image: UIImage(named: "Default")!))
         colleges.append(College(name: "Bradley", location: "Peoria", numberOfStudents: 40000, image: UIImage(named: "Default")!))
         
@@ -35,7 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
-        cell.textLabel?.text = colleges[indexPath.row].name
+        cell.textLabel?.text = "\(colleges[indexPath.row].name), \(colleges[indexPath.row].location)"
         return cell
     }
     
@@ -66,7 +66,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func onAddTapped(sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
-            textField.placeholder = "Add College Here"
+            textField.placeholder = "Add College Name Here"
+        }
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Add College Location Here"
+        }
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Add College Population Here"
+            textField.keyboardType = .NumberPad
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -74,7 +81,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let addAction = UIAlertAction(title: "Add", style: .Default) { (action) -> Void in
             let nameTextField = alert.textFields![0] as UITextField
-            self.colleges.append(College(name: nameTextField.text!))
+            let locationTextField = alert.textFields![1] as UITextField
+            let populationTextField = alert.textFields![2] as UITextField
+            self.colleges.append(College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: Int(populationTextField.text!)!, image: UIImage(named: "Default")!))
             self.tableView.reloadData()
         }
         alert.addAction(addAction)
