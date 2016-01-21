@@ -22,18 +22,19 @@
                                 <rect key="frame" x="0.0" y="59" width="600" height="541"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="srz-5c-mdT">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyCell" id="srz-5c-mdT" userLabel="MyCell">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="srz-5c-mdT" id="zaM-jZ-eLY">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Bfy-Q8-UxA" kind="show" id="LSW-GF-F96"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="YVc-lR-dvv"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zSd-ku-vha"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -45,9 +46,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0PH-LI-Xpq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="CbR-Mh-BWC"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zp0-lZ-DPU"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="CbR-Mh-BWC">
+                            <connections>
+                                <action selector="onEditTapped:" destination="BYZ-38-t0r" id="cUP-mv-Icu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zp0-lZ-DPU">
+                            <connections>
+                                <action selector="onAddTapped:" destination="BYZ-38-t0r" id="cBz-Qp-HNk"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="CbR-Mh-BWC" id="DUf-A9-lGS"/>
+                        <outlet property="tableView" destination="e1j-7U-7Y2" id="gb7-H7-Hxe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
