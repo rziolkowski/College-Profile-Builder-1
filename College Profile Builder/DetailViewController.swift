@@ -27,5 +27,8 @@ class DetailViewController: UIViewController {
         college.name = nameTextField.text!
         college.location = locationTextField.text!
         college.numberOfStudents = Int(populationTextField.text!)!
+        nameTextField.resignFirstResponder()
+        locationTextField.resignFirstResponder()
+        populationTextField.resignFirstResponder()
     }
 }

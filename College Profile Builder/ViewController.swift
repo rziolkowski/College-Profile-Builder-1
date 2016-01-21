@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var editButton: UIBarButtonItem!
     
     var colleges : [College] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         colleges.append(College(name: "University of Illinois", location: "Urbana/Champaigne", numberOfStudents: 40000, image: UIImage(named: "Default")!))
@@ -22,6 +22,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         colleges.append(College(name: "Bradley", location: "Peoria", numberOfStudents: 40000, image: UIImage(named: "Default")!))
         
         editButton.tag = 0
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
