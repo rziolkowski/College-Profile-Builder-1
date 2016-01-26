@@ -103,16 +103,23 @@
                                     <constraint firstAttribute="width" constant="240" id="w6U-l2-Y35"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Webpage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Odq-XI-Qp7">
-                                <rect key="frame" x="252" y="202" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLP-ms-GN7">
                                 <rect key="frame" x="283" y="376" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onTappedSaveButton:" destination="Bfy-Q8-UxA" eventType="touchUpInside" id="bxf-Rv-utJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Webpage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Odq-XI-Qp7">
+                                <rect key="frame" x="252" y="202" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nz3-TA-pUx">
+                                <rect key="frame" x="357" y="202" width="41" height="30"/>
+                                <state key="normal" title="Go To"/>
+                                <connections>
+                                    <segue destination="GZc-WI-qds" kind="presentation" id="rVI-nS-3Rd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,6 +131,7 @@
                             <constraint firstItem="dVF-fd-4jf" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="laO-E2-84z"/>
                             <constraint firstItem="Odq-XI-Qp7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="niy-DS-fTh"/>
                             <constraint firstItem="OLP-ms-GN7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="y5J-tM-bwc"/>
+                            <constraint firstItem="Nz3-TA-pUx" firstAttribute="leading" secondItem="Odq-XI-Qp7" secondAttribute="trailing" constant="8" id="yXw-Cu-m37"/>
                         </constraints>
                     </view>
                     <connections>
@@ -137,6 +145,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFU-51-35i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1625" y="144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cyf-i6-Sgv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ju5-za-AWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="GZc-WI-qds" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aOx-aj-pTZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q3B-Hp-e40"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ccu-be-9HE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rn8-sR-K2q">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljz-QX-bOb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Dismiss" id="evE-1c-5Ou"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Q3B-Hp-e40" firstAttribute="top" secondItem="Rn8-sR-K2q" secondAttribute="bottom" id="1ds-Nh-D8O"/>
+                            <constraint firstItem="Rn8-sR-K2q" firstAttribute="top" secondItem="ljz-QX-bOb" secondAttribute="bottom" id="KCG-iN-ghs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rn8-sR-K2q" secondAttribute="trailing" constant="-20" id="Wz5-XO-ofF"/>
+                            <constraint firstItem="Rn8-sR-K2q" firstAttribute="leading" secondItem="Ccu-be-9HE" secondAttribute="leadingMargin" constant="-20" id="ueb-d5-7Io"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2270" y="144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SSM-UP-fJY">
