@@ -17,9 +17,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colleges.append(College(name: "University of Illinois", location: "Urbana/Champaign", numberOfStudents: 40000, image: UIImage(named: "Default")!))
-        colleges.append(College(name: "Valparaiso", location: "Valparaiso", numberOfStudents: 40000, image: UIImage(named: "Default")!))
-        colleges.append(College(name: "Bradley", location: "Peoria", numberOfStudents: 40000, image: UIImage(named: "Default")!))
+        colleges.append(College(name: "University of Illinois", location: "Urbana/Champaigne", numberOfStudents: 40000, image: UIImage(named: "IllinoisLogo.png")!, webpage: "http://illinois.edu/"))
+        colleges.append(College(name: "Valparaiso", location: "Valparaiso", numberOfStudents: 40000, image: UIImage(named: "Valpo.png")!, webpage: "http://www.valpo.edu/"))
+        colleges.append(College(name: "Bradley", location: "Peoria", numberOfStudents: 40000, image: UIImage(named: "Bradley.png")!, webpage: "http://www.bradley.edu/"))
         
         editButton.tag = 0
     }
@@ -75,6 +75,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             textField.placeholder = "Add College Population Here"
             textField.keyboardType = .NumberPad
         }
+        alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
+            textField.placeholder = "Add College Webpage URL Here"
+        }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         alert.addAction(cancelAction)
@@ -83,7 +86,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let nameTextField = alert.textFields![0] as UITextField
             let locationTextField = alert.textFields![1] as UITextField
             let populationTextField = alert.textFields![2] as UITextField
-            self.colleges.append(College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: Int(populationTextField.text!)!, image: UIImage(named: "Default")!))
+            let webpageTextField = alert.textFields![3] as UITextField
+            self.colleges.append(College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: Int(populationTextField.text!)!, image: UIImage(named: "Default")!, webpage: webpageTextField.text!))
             self.tableView.reloadData()
         }
         alert.addAction(addAction)
