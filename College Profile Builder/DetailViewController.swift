@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SafariServices
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, SFSafariViewControllerDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var populationTextField: UITextField!
@@ -36,7 +37,9 @@ class DetailViewController: UIViewController {
         webpageTextField.resignFirstResponder()
     }
     @IBAction func onGoToTapped(sender: UIButton) {
-        
+        let svc = SFSafariViewController(URL: NSURL(string: webpageTextField.text!)!)
+        svc.delegate = self
+        self.presentViewController(svc, animated: true, completion: nil)
     }
 
 }
