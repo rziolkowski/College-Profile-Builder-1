@@ -35,4 +35,8 @@ class DetailViewController: UIViewController {
         populationTextField.resignFirstResponder()
         webpageTextField.resignFirstResponder()
     }
+    @IBAction func onGoToTapped(sender: UIButton) {
+        
+    }
+
 }
