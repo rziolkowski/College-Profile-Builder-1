@@ -122,12 +122,22 @@
                                     <action selector="onGoToTapped:" destination="Bfy-Q8-UxA" eventType="touchUpInside" id="JuV-jg-ObP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4U-It-OxT">
+                                <rect key="frame" x="428" y="261" width="48" height="30"/>
+                                <state key="normal" title="Library"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqD-Hw-6hw">
+                                <rect key="frame" x="428" y="310" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QW7-q8-NSm" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="2ru-0d-UGv"/>
+                            <constraint firstItem="nqD-Hw-6hw" firstAttribute="leading" secondItem="QW7-q8-NSm" secondAttribute="trailing" constant="8" id="4Qk-ZE-tJw"/>
                             <constraint firstItem="BB3-eD-kNT" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="8zK-HB-dkb"/>
                             <constraint firstItem="RCF-Dw-18I" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="bpj-Nk-rbV"/>
+                            <constraint firstItem="V4U-It-OxT" firstAttribute="leading" secondItem="QW7-q8-NSm" secondAttribute="trailing" constant="8" id="cUa-By-HeT"/>
                             <constraint firstItem="dVF-fd-4jf" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="laO-E2-84z"/>
                             <constraint firstItem="Odq-XI-Qp7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="niy-DS-fTh"/>
                             <constraint firstItem="OLP-ms-GN7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="y5J-tM-bwc"/>
