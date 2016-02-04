@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
@@ -88,7 +88,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let locationTextField = alert.textFields![1] as UITextField
             let populationTextField = alert.textFields![2] as UITextField
             let webpageTextField = alert.textFields![3] as UITextField
-            self.colleges.append(College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: Int(populationTextField.text!)!, image: UIImage(named: "Default")!, webpage: webpageTextField.text!))
+            if nameTextField.text?.characters.count != 0 && locationTextField.text?.characters.count != 0 && populationTextField.text?.characters.count != 0 && webpageTextField.text?.characters.count != 0
+            {
+                self.colleges.append(College(name: nameTextField.text!, location: locationTextField.text!, numberOfStudents: Int(populationTextField.text!)!, image: UIImage(named: "Default")!, webpage: webpageTextField.text!))
+            }
             self.tableView.reloadData()
         }
         alert.addAction(addAction)

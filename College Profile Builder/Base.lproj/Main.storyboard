@@ -125,10 +125,16 @@
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V4U-It-OxT">
                                 <rect key="frame" x="428" y="261" width="48" height="30"/>
                                 <state key="normal" title="Library"/>
+                                <connections>
+                                    <action selector="onLibraryTapped:" destination="Bfy-Q8-UxA" eventType="touchUpInside" id="rmU-mE-cm6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqD-Hw-6hw">
                                 <rect key="frame" x="428" y="310" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="onCameraTapped:" destination="Bfy-Q8-UxA" eventType="touchUpInside" id="8sH-Wo-dha"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
