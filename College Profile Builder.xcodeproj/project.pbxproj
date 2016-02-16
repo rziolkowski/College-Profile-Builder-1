@@ -16,6 +16,7 @@
 		3F1FAAB61C4FFCDF0025B371 /* College_Profile_BuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAAB51C4FFCDF0025B371 /* College_Profile_BuilderUITests.swift */; };
 		3F1FAAC41C5001880025B371 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAAC31C5001880025B371 /* College.swift */; };
 		3F1FAAC61C51556B0025B371 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F1FAAC51C51556B0025B371 /* DetailViewController.swift */; };
+		3F35164C1C739C3600C1F57D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F35164B1C739C3600C1F57D /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3F1FAAB71C4FFCDF0025B371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F1FAAC31C5001880025B371 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 		3F1FAAC51C51556B0025B371 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3F35164B1C739C3600C1F57D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3F1FAAC51C51556B0025B371 /* DetailViewController.swift */,
 				3F1FAAC31C5001880025B371 /* College.swift */,
 				3F1FAA991C4FFCDF0025B371 /* Main.storyboard */,
+				3F35164B1C739C3600C1F57D /* MapViewController.swift */,
 				3F1FAA9C1C4FFCDF0025B371 /* Assets.xcassets */,
 				3F1FAA9E1C4FFCDF0025B371 /* LaunchScreen.storyboard */,
 				3F1FAAA11C4FFCDF0025B371 /* Info.plist */,
@@ -268,6 +271,7 @@
 				3F1FAA981C4FFCDF0025B371 /* ViewController.swift in Sources */,
 				3F1FAA961C4FFCDF0025B371 /* AppDelegate.swift in Sources */,
 				3F1FAAC41C5001880025B371 /* College.swift in Sources */,
+				3F35164C1C739C3600C1F57D /* MapViewController.swift in Sources */,
 				3F1FAAC61C51556B0025B371 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

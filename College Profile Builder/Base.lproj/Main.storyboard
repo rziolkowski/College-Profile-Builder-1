@@ -136,9 +136,12 @@
                                     <action selector="onCameraTapped:" destination="Bfy-Q8-UxA" eventType="touchUpInside" id="8sH-Wo-dha"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqr-Uu-06M">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cqr-Uu-06M">
                                 <rect key="frame" x="357" y="126" width="41" height="30"/>
                                 <state key="normal" title="Go To"/>
+                                <connections>
+                                    <segue destination="SuJ-Jl-Ik0" kind="show" id="nao-7u-wP5"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,6 +153,7 @@
                             <constraint firstItem="V4U-It-OxT" firstAttribute="leading" secondItem="QW7-q8-NSm" secondAttribute="trailing" constant="8" id="cUa-By-HeT"/>
                             <constraint firstItem="dVF-fd-4jf" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="laO-E2-84z"/>
                             <constraint firstItem="Odq-XI-Qp7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="niy-DS-fTh"/>
+                            <constraint firstItem="Cqr-Uu-06M" firstAttribute="leading" secondItem="RCF-Dw-18I" secondAttribute="trailing" constant="8" id="peW-YU-Ojd"/>
                             <constraint firstItem="OLP-ms-GN7" firstAttribute="centerX" secondItem="HLq-B8-zTH" secondAttribute="centerX" id="y5J-tM-bwc"/>
                             <constraint firstItem="Nz3-TA-pUx" firstAttribute="leading" secondItem="Odq-XI-Qp7" secondAttribute="trailing" constant="8" id="yXw-Cu-m37"/>
                         </constraints>
@@ -166,10 +170,10 @@
             </objects>
             <point key="canvasLocation" x="1625" y="144"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="uHQ-kr-BCZ">
             <objects>
-                <viewController id="SuJ-Jl-Ik0" sceneMemberID="viewController">
+                <viewController id="SuJ-Jl-Ik0" customClass="MapViewController" customModule="College_Profile_Builder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hpt-lD-cV7"/>
                         <viewControllerLayoutGuide type="bottom" id="gMA-8V-zA4"/>
@@ -182,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lO9-H3-TRe">
-                                <rect key="frame" x="200" y="20" width="200" height="30"/>
+                                <rect key="frame" x="200" y="64" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -196,6 +200,10 @@
                             <constraint firstItem="gMA-8V-zA4" firstAttribute="top" secondItem="cId-e1-7Mb" secondAttribute="bottom" id="r0O-co-8Qm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapTextField" destination="lO9-H3-TRe" id="57p-Ze-Unw"/>
+                        <outlet property="mapView" destination="cId-e1-7Mb" id="YjA-Sg-Cpl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TE8-ly-brT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

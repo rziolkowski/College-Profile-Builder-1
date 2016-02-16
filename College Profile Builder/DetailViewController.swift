@@ -29,6 +29,11 @@ class DetailViewController: UIViewController, SFSafariViewControllerDelegate, UI
         imagePicker.delegate = self
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! MapViewController
+        dvc.firstText = locationTextField.text!
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true) { () -> Void in
             let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
