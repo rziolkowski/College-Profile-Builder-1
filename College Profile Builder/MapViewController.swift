@@ -21,12 +21,18 @@ class MapViewController: UIViewController, UITextFieldDelegate {
         findLocation(mapTextField.text!)
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        findLocation(textField.text!)
+        textField.resignFirstResponder()
+        return true
+    }
+    
     func displayMap(placemark: CLPlacemark)
     {
         mapTextField.text = placemark.name
         let center = CLLocationCoordinate2DMake((placemark.location?.coordinate.latitude)!,
             (placemark.location?.coordinate.longitude)!)
-        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let span = MKCoordinateSpanMake(1.0, 1.0)
         let region = MKCoordinateRegionMake(center, span)
         let pin = MKPointAnnotation()
         pin.coordinate = center
